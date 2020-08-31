@@ -10,13 +10,13 @@
     "publish-ci": "lerna publish from-package -y --no-verify-access"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/github": "^1.1.0",
-    "execa": "^3.4.0",
-    "lerna": "^3.19.0"
+    "@actions/core": "^1.2.5",
+    "@actions/github": "^4.0.0",
+    "execa": "^4.0.3",
+    "lerna": "^3.22.1"
   },
   "workspaces": {
     "packages": [
