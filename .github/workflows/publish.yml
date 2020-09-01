@@ -26,9 +26,7 @@ jobs:
         with:
           node-version: 12
       - name: Setup NPM
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
       - name: Set Git Identity
         run: |
           git config --global user.name 'publisher[bot]'
@@ -36,11 +34,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
-        run: yarn
+        run: echo .npmrc && yarn
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create release
         run: yarn lerna publish --conventional-commits --yes --no-push --create-release github
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
