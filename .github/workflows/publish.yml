@@ -29,8 +29,8 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
       - name: Set Git Identity
         run: |
-          git config --global user.name 'publisher[bot]'
-          git config --global user.email 'publisher[bot]@noreply.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
@@ -42,10 +42,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Version
+        uses: ./.github/actions/tagger
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          author: publisher[bot] <publisher[bot]@noreply.com>
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: chore/release
           title: "chore(release): create new release [skip ci]"
