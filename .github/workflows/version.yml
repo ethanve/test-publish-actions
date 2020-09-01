@@ -1,7 +1,5 @@
 name: Version Packages
-on:
-  release:
-    types: [created]
+on: pull_request
 env:
   CI: true
 
