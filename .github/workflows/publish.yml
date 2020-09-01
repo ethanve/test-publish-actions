@@ -43,7 +43,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Version
-        uses: ./.github/actions/tagger
+        uses: actions/tagger
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create Pull Request
