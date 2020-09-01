@@ -1,7 +1,5 @@
 name: Version Packages
-
-on: push
-
+on: pull_request
 env:
   CI: true
 
@@ -13,7 +11,7 @@ jobs:
     if: contains(github.event.pull_request.title, 'chore(release)')
 
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repog c
         uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v1
