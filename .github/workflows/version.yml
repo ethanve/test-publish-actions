@@ -11,7 +11,7 @@ jobs:
     if: contains(github.event.pull_request.title, 'chore(release)')
 
     steps:
-      - name: Checkout Repog c
+      - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -19,8 +19,8 @@ jobs:
           node-version: 12
       - name: Set Git Identity
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'publisher[bot]'
+          git config --global user.email 'publisher[bot]@noreply.com'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
@@ -37,4 +37,9 @@ jobs:
         uses: hmarr/auto-approve-action@v2.0.0
         with:
          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge me!
+        uses: ridedott/merge-me-action@v1.2.62
+        with:
+          GITHUB_LOGIN: publisher
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
