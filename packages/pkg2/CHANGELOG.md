@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.1 (2020-09-01)
+
+
+### Bug Fixes
+
+* fixes ([#5](https://github.com/jquense/test-publish-actions/issues/5)) ([3f32df3](https://github.com/jquense/test-publish-actions/commit/3f32df3af5204ab3585ee20d96ae4c6bd47f10d0))
+
+
+
+
+
 # 0.7.0 (2020-09-01)
 
 
