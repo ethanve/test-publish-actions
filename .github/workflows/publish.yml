@@ -26,20 +26,19 @@ jobs:
         with:
           node-version: 12
       - name: Setup NPM
-        run: |
-          yarn logout
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
       - name: Set Git Identity
         run: |
           git config --global user.name 'publisher[bot]'
           git config --global user.email 'publisher[bot]@noreply.com'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: echo
+        run: cat .npmrc
       - name: Install Dependencies
         run: yarn
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create release
         run: yarn lerna publish --conventional-commits --yes --no-push --create-release github
         env:
