@@ -20,9 +20,10 @@ jobs:
         with:
           node-version: 12
       - name: Setup NPM
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn logout
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
       - name: Set Git Identity
         run: |
           git config --global user.name 'publisher[bot]'
