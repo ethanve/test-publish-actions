@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.1 (2020-09-01)
+
+
+### Bug Fixes
+
+* pass npm token ([#4](https://github.com/jquense/test-publish-actions/issues/4)) ([b3a8cba](https://github.com/jquense/test-publish-actions/commit/b3a8cba2ebb6d1dbfd6a0a6a0df54cb495bc78a1))
+
+
+
+
+
 # [0.2.0](https://github.com/jquense/test-publish-actions/compare/@everes/pkg1@0.1.0...@everes/pkg1@0.2.0) (2020-08-31)
 
 
