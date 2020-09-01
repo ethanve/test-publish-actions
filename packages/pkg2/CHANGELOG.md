@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2020-09-01)
+
+
+### Features
+
+* split versioning ([#6](https://github.com/jquense/test-publish-actions/issues/6)) ([b1b9f88](https://github.com/jquense/test-publish-actions/commit/b1b9f88a2111a3df39e9bbbb46c92c2bcd814800))
+
+
+
+
+
 ## 0.3.1 (2020-09-01)
 
 
