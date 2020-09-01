@@ -20,10 +20,7 @@ jobs:
         with:
           node-version: 12
       - name: Setup NPM
-        run: |
-          yarn logout
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
       - name: Set Git Identity
         run: |
           git config --global user.name 'publisher[bot]'
@@ -32,10 +29,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
         run: yarn
-      - name: Version
-        uses: ./.github/actions/tagger
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Auto Approve PR
         uses: hmarr/auto-approve-action@v2.0.0
         with:
