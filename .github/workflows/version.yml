@@ -31,6 +31,10 @@ jobs:
         run: yarn
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Version
+        uses: ./.github/actions/tagger
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Auto Approve PR
         uses: hmarr/auto-approve-action@v2.0.0
         with:

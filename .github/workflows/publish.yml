@@ -38,7 +38,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Create release
-        run: yarn lerna publish --conventional-commits --yes --no-push --create-release github
+        run: yarn lerna publish --conventional-commits --yes --no-push
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
