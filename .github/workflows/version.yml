@@ -1,11 +1,6 @@
 name: Version Packages
 
-on:
-  # When Release Pull Request is merged
-  pull_request:
-    types: [opened]
-    branches:
-      - master
+on: pull_request
 
 env:
   CI: true
