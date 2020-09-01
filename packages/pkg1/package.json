@@ -1,6 +1,6 @@
 {
   "name": "@everes/pkg1",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "main": "index.js",
   "repository": "https://github.com/jquense/test-publish-actions.git",
   "author": "Ethan Veres",

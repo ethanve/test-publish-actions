@@ -3,15 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+
+# 0.7.0 (2020-09-01)
+
+
+### Features
+
+* add tagger ([#10](https://github.com/jquense/test-publish-actions/issues/10)) ([255d352](https://github.com/jquense/test-publish-actions/commit/255d352b53a033851ebf6b6698a5378ec13426e0))
+
 ## 0.6.2 (2020-09-01)
 
 
 ### Bug Fixes
 
 * 17 ([#8](https://github.com/jquense/test-publish-actions/issues/8)) ([9561312](https://github.com/jquense/test-publish-actions/commit/95613129a4a3d4f942bbc035f92507917cd5dfa9))
-
-
-
 
 
 ## 0.6.1 (2020-09-01)
