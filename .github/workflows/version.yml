@@ -1,6 +1,6 @@
 name: Version Packages
 
-on: pull_request
+on: push
 
 env:
   CI: true
@@ -35,4 +35,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Auto Approve PR
+        uses: hmarr/auto-approve-action@v2.0.0
+        with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
 
